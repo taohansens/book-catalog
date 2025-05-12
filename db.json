@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "Matéria Escura",
+      "author": "Blake Crouch",
+      "genre": "Ficção"
+    },
+    {
+      "id": 2,
+      "title": "Recursão",
+      "author": "Blake Crouch",
+      "genre": "Ficção"
+    },
+    {
+      "id": 3,
+      "title": "Upgrade",
+      "author": "Blake Crouch",
+      "genre": "Ficção"
+    }
+  ]
+}
