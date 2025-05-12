@@ -1,10 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 const Book = ({ book, onToggleFavorite, isFavorite }) => (
   <div className="p-4 border rounded-lg shadow-md flex justify-between items-center">
     <div>
-      <h2 className="text-xl font-semibold">{book.title}</h2>
+      <h2 className="text-xl font-semibold">
+        <Link to={`/book/${book.id}`} className="text-blue-500 hover:underline">
+          {book.title}
+        </Link>
+      </h2>
       <p className="text-gray-700">{book.author}</p>
       <p className="text-gray-500">{book.genre}</p>
     </div>
