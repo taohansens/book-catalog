@@ -1,50 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Book from "./Book";
 import GenreFilter from "./GenreFilter";
 import Favorites from "./Favorites";
-import api from "../services/api";
+import { BookContext } from '../contexts/BookContext';
 
 const BookList = () => {
-  const [books, setBooks] = useState([]);
-  const [filteredBooks, setFilteredBooks] = useState([]);
-  const [genres, setGenres] = useState([]);
-  const [selectedGenre, setSelectedGenre] = useState("");
-  const [favorites, setFavorites] = useState([]);
+  const { books, favorites, toggleFavorite } = useContext(BookContext);
+  const [filteredBooks, setFilteredBooks] = React.useState(books);
+  const [selectedGenre, setSelectedGenre] = React.useState('');
   const [showFavorites, setShowFavorites] = useState(false);
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await api.get("/books");
-        setBooks(response.data);
-        setFilteredBooks(response.data);
-        const uniqueGenres = [
-          ...new Set(response.data.map((book) => book.genre)),
-        ];
-        setGenres(uniqueGenres);
-      } catch (error) {
-        console.error("Erro ao buscar os livros:", error);
-      }
-    };
-
-    fetchBooks();
-  }, []);
+ useEffect(() => {
+    setFilteredBooks(books);
+  }, [books]);
 
   const handleGenreChange = (genre) => {
     setSelectedGenre(genre);
-    if (genre === "") {
+    if (genre === '') {
       setFilteredBooks(books);
     } else {
       setFilteredBooks(books.filter((book) => book.genre === genre));
     }
-  };
-
-  const toggleFavorite = (book) => {
-    setFavorites((prevFavorites) =>
-      prevFavorites.some((fav) => fav.id === book.id)
-        ? prevFavorites.filter((fav) => fav.id !== book.id)
-        : [...prevFavorites, book]
-    );
   };
 
   return (
@@ -59,7 +35,7 @@ const BookList = () => {
         </button>
       </div>
       <GenreFilter
-        genres={genres}
+        genres={[...new Set(books.map((book) => book.genre))]}
         selectedGenre={selectedGenre}
         onSelectGenre={handleGenreChange}
       />
