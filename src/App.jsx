@@ -1,18 +1,20 @@
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import BookList from './components/BookList';
-import BookDetails from './components/BookDetails';
-import AddBook from './components/AddBook';
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import BookListView from "./views/BookListView";
+import BookDetailsView from "./views/BookDetailsView";
+import AddBookView from "./views/AddBookView";
 
-const App = () => (
-  <div>
-    <Header />
-    <Routes>
-      <Route path="/" element={<BookList />} />
-      <Route path="/book/:id" element={<BookDetails />} />
-      <Route path="/add-book" element={<AddBook />} />
-    </Routes>
-  </div>
-);
+function App() {
+  return (
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<BookListView />} />
+        <Route path="/book/:id" element={<BookDetailsView />} />
+        <Route path="/add-book" element={<AddBookView />} />
+      </Routes>
+    </>
+  );
+}
 
 export default App;

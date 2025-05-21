@@ -1,16 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaBook } from 'react-icons/fa';
-import Book from "./Book";
-import GenreFilter from "./GenreFilter";
-import Favorites from "./Favorites";
-import Button from "./Button";
+import Book from "../components/Book";
+import GenreFilter from "../components/GenreFilter";
+import Favorites from "../components/Favorites";
+import Button from "../components/Button";
 import { BookContext } from '../contexts/BookContext';
 
-const BookList = () => {
+const BookListView = () => {
   const { books, favorites, toggleFavorite } = useContext(BookContext);
-  const [filteredBooks, setFilteredBooks] = React.useState(books);
-  const [selectedGenre, setSelectedGenre] = React.useState('');
+  const [filteredBooks, setFilteredBooks] = useState(books);
+  const [selectedGenre, setSelectedGenre] = useState('');
   const [showFavorites, setShowFavorites] = useState(false);
 
   useEffect(() => {
@@ -84,4 +84,4 @@ const BookList = () => {
   );
 };
 
-export default BookList;
+export default BookListView; 
