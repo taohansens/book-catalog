@@ -1,22 +1,28 @@
 import React from 'react';
+import { Row, Col, Alert } from 'react-bootstrap';
 import Book from './Book';
 
 const Favorites = ({ favorites, onToggleFavorite }) => {
   if (favorites.length === 0) {
-    return <p className="p-4 text-gray-600">Nenhum livro foi favoritado ainda.</p>;
+    return (
+      <Alert variant="info">
+        Nenhum livro foi favoritado ainda.
+      </Alert>
+    );
   }
 
   return (
-    <div className="grid gap-4 p-4">
+    <Row className="g-4">
       {favorites.map((book) => (
-        <Book
-          key={book.id}
-          book={book}
-          onToggleFavorite={onToggleFavorite}
-          isFavorite={true}
-        />
+        <Col key={book.id} xs={12} md={6} lg={4}>
+          <Book
+            book={book}
+            onToggleFavorite={onToggleFavorite}
+            isFavorite={true}
+          />
+        </Col>
       ))}
-    </div>
+    </Row>
   );
 };
 

@@ -1,30 +1,40 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Button } from 'react-bootstrap';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 
 const Book = ({ book, onToggleFavorite, isFavorite }) => (
-  <div className="p-4 border rounded-lg shadow-md flex justify-between items-center">
-    <div>
-      <h2 className="text-xl font-semibold">
-        <Link to={`/book/${book.id}`} className="text-blue-500 hover:underline">
-          {book.title}
-        </Link>
-      </h2>
-      <p className="text-gray-700">{book.author}</p>
-      <p className="text-gray-500">{book.genre}</p>
-    </div>
-    <button
-      className="text-2xl"
-      onClick={() => onToggleFavorite(book)}
-      aria-label={isFavorite ? 'Desfavoritar' : 'Favoritar'}
-    >
-      {isFavorite ? (
-        <AiFillHeart className="text-red-500" />
-      ) : (
-        <AiOutlineHeart className="text-gray-400" />
-      )}
-    </button>
-  </div>
+  <Card className="h-100">
+    <Card.Body className="d-flex flex-column">
+      <div className="d-flex justify-content-between align-items-start">
+        <div>
+          <Card.Title>
+            <Link to={`/book/${book.id}`} className="text-decoration-none">
+              {book.title}
+            </Link>
+          </Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            {book.author}
+          </Card.Subtitle>
+          <Card.Text className="text-muted">
+            {book.genre}
+          </Card.Text>
+        </div>
+        <Button
+          variant="link"
+          className="p-0 text-decoration-none"
+          onClick={() => onToggleFavorite(book)}
+          aria-label={isFavorite ? 'Desfavoritar' : 'Favoritar'}
+        >
+          {isFavorite ? (
+            <AiFillHeart className="text-danger fs-4" />
+          ) : (
+            <AiOutlineHeart className="text-secondary fs-4" />
+          )}
+        </Button>
+      </div>
+    </Card.Body>
+  </Card>
 );
 
 export default Book;

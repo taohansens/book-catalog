@@ -7,7 +7,7 @@ export const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [favorites, setFavorites] = useState([]);
 
-useEffect(() => {
+  useEffect(() => {
     const fetchBooks = async () => {
       try {
         const response = await api.get("/books");
@@ -18,8 +18,7 @@ useEffect(() => {
     };
 
     fetchBooks();
-  }
-  , []);
+  }, []);
 
   const toggleFavorite = (book) => {
     setFavorites((prevFavorites) =>
@@ -29,11 +28,21 @@ useEffect(() => {
     );
   };
 
+  const addBook = (newBook) => {
+    setBooks(prevBooks => [...prevBooks, newBook]);
+  };
+
+  const removeBook = (id) => {
+    setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
+  };
+
   const contextValue = useMemo(
     () => ({
       books,
       favorites,
       toggleFavorite,
+      addBook,
+      removeBook
     }),
     [books, favorites]
   );

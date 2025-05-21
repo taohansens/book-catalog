@@ -1,24 +1,21 @@
 import React from 'react';
+import { Form } from 'react-bootstrap';
 
 const GenreFilter = ({ genres, selectedGenre, onSelectGenre }) => (
-  <div className="p-4">
-    <label htmlFor="genre-select" className="block text-gray-700 font-bold mb-2">
-      Filtrar por Gênero:
-    </label>
-    <select
-      id="genre-select"
+  <Form.Group className="mb-4">
+    <Form.Label>Filtrar por Gênero:</Form.Label>
+    <Form.Select
       value={selectedGenre}
       onChange={(e) => onSelectGenre(e.target.value)}
-      className="w-full p-2 border rounded-lg"
     >
-      <option value="">Todos</option>
-      {genres.map((genre) => (
-        <option key={genre} value={genre}>
+      <option key="all" value="">Todos</option>
+      {genres.map((genre, index) => (
+        <option key={`${genre}-${index}`} value={genre}>
           {genre}
         </option>
       ))}
-    </select>
-  </div>
+    </Form.Select>
+  </Form.Group>
 );
 
 export default GenreFilter;

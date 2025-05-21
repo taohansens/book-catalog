@@ -1,22 +1,124 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "Matéria Escura",
-      "author": "Blake Crouch",
-      "genre": "Ficção"
+      "id": "1",
+      "title": "O Senhor dos Anéis: A Sociedade do Anel",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasia"
     },
     {
-      "id": 2,
+      "id": "2",
+      "title": "O Senhor dos Anéis: As Duas Torres",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "3",
+      "title": "O Senhor dos Anéis: O Retorno do Rei",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "4",
+      "title": "Harry Potter e a Pedra Filosofal",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "5",
+      "title": "Harry Potter e a Câmara Secreta",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "6",
+      "title": "Harry Potter e o Prisioneiro de Azkaban",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "7",
+      "title": "O Olho do Mundo",
+      "author": "Robert Jordan",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "8",
+      "title": "A Grande Caçada",
+      "author": "Robert Jordan",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "9",
+      "title": "O Dragão Renascido",
+      "author": "Robert Jordan",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "10",
+      "title": "O Nome do Vento",
+      "author": "Patrick Rothfuss",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "11",
+      "title": "O Temor do Sábio",
+      "author": "Patrick Rothfuss",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "12",
       "title": "Recursão",
       "author": "Blake Crouch",
-      "genre": "Ficção"
+      "genre": "Fantasia"
     },
     {
-      "id": 3,
-      "title": "Upgrade",
+      "id": "13",
+      "title": "Matéria Escura",
       "author": "Blake Crouch",
-      "genre": "Ficção"
+      "genre": "Fantasia"
+    },
+    {
+      "id": "14",
+      "title": "O Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "15",
+      "title": "Harry Potter e o Cálice de Fogo",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "16",
+      "title": "Harry Potter e a Ordem da Fênix",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "17",
+      "title": "Harry Potter e o Enigma do Príncipe",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "18",
+      "title": "Harry Potter e as Relíquias da Morte",
+      "author": "J.K. Rowling",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "19",
+      "title": "O Silmarillion",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasia"
+    },
+    {
+      "id": "20",
+      "title": "O Caminho dos Reis",
+      "author": "Brandon Sanderson",
+      "genre": "Fantasia"
     }
   ]
 }
